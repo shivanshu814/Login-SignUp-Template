@@ -52,54 +52,47 @@ export default function Home() {
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<main className={styles.main}>
-				<div className={styles.center}>
+
+			<div className={styles.center}>
+				<center>
 					<Image
 						className={styles.logo}
 						src='/logo.png'
-						alt='Next.js Logo'
+						alt='Logo'
 						width={540}
 						height={180}
 						priority
 					/>
-				</div>
-				<Flex height={'vh'} alignItems={'center'} justifyContent={'center'}>
-					<Flex direction={'column'} background={'grey.300'} p={12} rounded={6}>
-						<Heading mb={2}>
-							{' '}
-							<Center mb={5}>Log In</Center>
-							<Input
-								placeholder='adminpanel@horsesmouth.in'
-								variant='filled'
-								mb={3}
-								type='email'
-							/>
-							<Input
-								placeholder='******************'
-								variant='filled'
-								mb={6}
-								type='password'
-							/>
-							<Center>
-								<Button
-									marginRight='25'
-									width='280px'
-									mb={50}
-									colorScheme='teal'>
-									<Link href='/dashboard'>Log In</Link>
-								</Button>
-								<Button
-									marginLeft='25'
-									width='280px'
-									mb={50}
-									colorScheme='teal'>
-									<Link href='/signup'>Sign Up</Link>
-								</Button>
-							</Center>
-						</Heading>
-					</Flex>
+				</center>
+			</div>
+			<Flex height={'vh'} alignItems={'center'} justifyContent={'center'}>
+				<Flex direction={'column'} background={'grey.300'} p={12} rounded={6}>
+					<Heading mb={2}>
+						{' '}
+						<Center mb={5}>Log In</Center>
+						<Input
+							placeholder='adminpanel@horsesmouth.in'
+							variant='filled'
+							mb={3}
+							type='email'
+						/>
+						<Input
+							placeholder='******************'
+							variant='filled'
+							mb={6}
+							type='password'
+						/>
+						<Center>
+							<Button marginRight='25' width='280px' mb={50} colorScheme='teal'>
+								<Link href='/dashboard'>Log In</Link>
+							</Button>
+							<Button marginLeft='25' width='280px' mb={50} colorScheme='teal'>
+								<Link href='/signup'>Sign Up</Link>
+							</Button>
+						</Center>
+					</Heading>
 				</Flex>
-			</main>
+			</Flex>
 		</>
 	);
 }
