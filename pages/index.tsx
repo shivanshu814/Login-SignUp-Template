@@ -4,7 +4,15 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
-import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
+import {
+	Box,
+	Button,
+	FormControl,
+	FormLabel,
+	Input,
+	Flex,
+	Heading,
+} from '@chakra-ui/react';
 import { FormEvent, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -50,27 +58,24 @@ export default function Home() {
 						priority
 					/>
 				</div>
-				<Box maxW='md' mx='auto' mt='8'>
-					<form onSubmit={handleSubmit}>
-						<FormControl>
-							<FormLabel>Email address</FormLabel>
+				<Flex height={'vh'} alignItems={'center'} justifyContent={'center'}>
+					<Flex direction={'column'} background={'grey.300'} p={12} rounded={6}>
+						<Heading>
 							<Input
+								placeholder='adminpanel@horsesmouth.in'
+								variant='filled'
+								mb={3}
 								type='email'
-								onChange={(event) => setEmail(event.target.value)}
 							/>
-						</FormControl>
-						<FormControl mt='4'>
-							<FormLabel>Password</FormLabel>
 							<Input
+								placeholder='******************'
+								variant='filled'
+								mb={6}
 								type='password'
-								onChange={(event) => setPassword(event.target.value)}
 							/>
-						</FormControl>
-						<Button type='submit' colorScheme='blue' mt='4'>
-							Log in
-						</Button>
-					</form>
-				</Box>
+						</Heading>
+					</Flex>
+				</Flex>
 			</main>
 		</>
 	);
