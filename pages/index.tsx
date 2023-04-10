@@ -12,16 +12,15 @@ import {
 	Input,
 	Flex,
 	Heading,
+	Center,
 } from '@chakra-ui/react';
 import { FormEvent, useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-	function handleSubmit(event: FormEvent<HTMLFormElement>): void {
-		throw new Error('Function not implemented.');
-	}
-
 	function setEmail(value: any) {
 		throw new Error('Function not implemented.');
 	}
@@ -38,7 +37,13 @@ export default function Home() {
 			// TODO: Handle form submission
 		};
 	}
+	const router = useRouter();
 
+	const handleSubmit = (event: { preventDefault: () => void }) => {
+		event.preventDefault();
+		// TODO: Handle form submission
+		router.push('/dashboard');
+	};
 	return (
 		<>
 			<Head>
@@ -60,7 +65,9 @@ export default function Home() {
 				</div>
 				<Flex height={'vh'} alignItems={'center'} justifyContent={'center'}>
 					<Flex direction={'column'} background={'grey.300'} p={12} rounded={6}>
-						<Heading>
+						<Heading mb={2}>
+							{' '}
+							<Center mb={5}>Log In</Center>
 							<Input
 								placeholder='adminpanel@horsesmouth.in'
 								variant='filled'
@@ -73,6 +80,22 @@ export default function Home() {
 								mb={6}
 								type='password'
 							/>
+							<Center>
+								<Button
+									marginRight='25'
+									width='280px'
+									mb={50}
+									colorScheme='teal'>
+									<Link href='/dashboard'>Log In</Link>
+								</Button>
+								<Button
+									marginLeft='25'
+									width='280px'
+									mb={50}
+									colorScheme='teal'>
+									<Link href='/signup'>Sign Up</Link>
+								</Button>
+							</Center>
 						</Heading>
 					</Flex>
 				</Flex>
