@@ -57,7 +57,7 @@ export default function Home() {
 				<center>
 					<Image
 						className={styles.logo}
-						src='/logo.png'
+						src='/github.jpg'
 						alt='Logo'
 						width={540}
 						height={180}
